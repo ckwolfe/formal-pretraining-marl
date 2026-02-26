@@ -2,37 +2,37 @@
 
 ## Performance claims (what we aim to show)
 
-We consider **planning for objectives** (reach target, avoid collision) in 3D multi-agent settings where the policy outputs **waypoint plans** over a horizon, not single-step reactive actions. The environment has **transient feasibility**: situations are **passable** (a feasible trajectory to the objective exists) or **impassable** (none does), and feasibility can change over time (e.g. gaps open and close). Many opportunities are **non-recurring or edge-case**—passable only in a short or rare window; the policy must commit correctly in that window or fail.
+We consider planning for objectives (reach target, avoid collision) in 3D multi-agent settings where the policy outputs waypoint plans over a horizon, not single-step reactive actions. The environment has transient feasibility: situations are passable (a feasible trajectory to the objective exists) or impassable (none does), and feasibility can change over time (e.g. gaps open and close). Many opportunities are non-recurring or edge-case—passable only in a short or rare window; the policy must commit correctly in that window or fail.
 
-**Claims.** HJ reachability pretraining yields **feasibility-aware implicit planning**: the policy learns when and how to commit from reachability-derived labels (waypoints, time-to-boundary, affordance), rather than discovering feasibility from reward alone. We expect:
+Claims. HJ reachability pretraining yields feasibility-aware implicit planning: the policy learns when and how to commit from reachability-derived labels (waypoints, time-to-boundary, affordance), rather than discovering feasibility from reward alone. We expect:
 
-- **Better sample efficiency:** Fewer env steps to reach a given make-it rate than MARL from scratch (or than MARL with reward shaping only), because the policy’s implicit planning is already aligned with “can I make it?” and when to commit.
-- **Higher make-it rate:** Especially in settings with **edge-case or non-recurring passable windows**—precisely where reactive MARL wastes samples and often fails. We aim to show higher success rate (and/or fewer collisions / near-misses) in such scenarios.
-- **Scaling with agent count:** With N ≈ 8 agents, credit assignment and non-stationarity hurt MARL; pretraining with pairwise HJ (aggregated over agents) provides a prior that can help. We aim to show gains hold at N = 8.
+- Better sample efficiency: Fewer env steps to reach a given make-it rate than MARL from scratch (or than MARL with reward shaping only), because the policy’s implicit planning is already aligned with “can I make it?” and when to commit.
+- Higher make-it rate: Especially in settings with edge-case or non-recurring passable windows—precisely where reactive MARL wastes samples and often fails. We aim to show higher success rate (and/or fewer collisions / near-misses) in such scenarios.
+- Scaling with agent count: With N ≈ 8 agents, credit assignment and non-stationarity hurt MARL; pretraining with pairwise HJ (aggregated over agents) provides a prior that can help. We aim to show gains hold at N = 8.
 
-These are **empirical claims** to be validated; we compare against MARL baselines and alternative pretraining (e.g. scripted teacher) to test them.
+These are empirical claims to be validated; we compare against MARL baselines and alternative pretraining (e.g. scripted teacher) to test them.
 
 ---
 
 ## What
 
-**MARL SOTA: where it works and where it fails.** SOTA does well: CTDE (train centralized, run decentralized); value factorization (QMIX, QPLEX) and simple PPO/MAPPO on cooperative games (SMAC, Football, Hanabi); continuous control (MADDPG); credit assignment (COMA) and coordination (DICG) in fixed settings. It *fails* or struggles: **sample inefficiency**—lots of env steps to reach good performance; **partial observability**—no built-in notion of belief or “can I make it?”; **non-stationarity** and **credit assignment in open systems** (changing agents/tasks); **safety-critical “make it”**—policies are reactive, no explicit feasibility reasoning; **overgeneralization** in value factorization (monotonicity limits). So we get strong game-players but not yet agents that reliably “make it” in cluttered, dynamic 3D with tight gaps.
+MARL SOTA: where it works and where it fails. SOTA does well: CTDE (train centralized, run decentralized); value factorization (QMIX, QPLEX) and simple PPO/MAPPO on cooperative games (SMAC, Football, Hanabi); continuous control (MADDPG); credit assignment (COMA) and coordination (DICG) in fixed settings. It fails or struggles: sample inefficiency—lots of env steps to reach good performance; partial observability—no built-in notion of belief or “can I make it?”; non-stationarity and credit assignment in open systems (changing agents/tasks); safety-critical “make it”—policies are reactive, no explicit feasibility reasoning; overgeneralization in value factorization (monotonicity limits). So we get strong game-players but not yet agents that reliably “make it” in cluttered, dynamic 3D with tight gaps.
 
-**Our angle.** We care whether the agent can make it, not guaranteed safety. HJ reachability is usually used as a runtime shield; we use its outputs as **training targets** so the policy learns "is this gap closable?" from partial observations. No explicit planner; planning is implicit. Goal: higher success probability and better risk-taking. Risks: reward shaping may suffice; HJ does not scale beyond pairwise; RL fine-tune may overwrite pretrained structure.
+Our angle. We care whether the agent can make it, not guaranteed safety. HJ reachability is usually used as a runtime shield; we use its outputs as training targets so the policy learns "is this gap closable?" from partial observations. No explicit planner; planning is implicit. Goal: higher success probability and better risk-taking. Risks: reward shaping may suffice; HJ does not scale beyond pairwise; RL fine-tune may overwrite pretrained structure.
 
 ---
 
 ## Novelty and publishability
 
-**Novelty:** HJ-conditioned waypoints as *pretraining* data for MARL, then RL fine-tune—not HJ as shield, not BC of an arbitrary expert. Teacher is reachability-theoretic; setting is multi-agent 3D; goal is "make it." That combination is underexplored. **Clearly novel** if HJ pretraining improves make-it rate and/or sample efficiency over alternative pretraining or no pretraining.
+Novelty: HJ-conditioned waypoints as pretraining data for MARL, then RL fine-tune—not HJ as shield, not BC of an arbitrary expert. Teacher is reachability-theoretic; setting is multi-agent 3D; goal is "make it." That combination is underexplored. Clearly novel if HJ pretraining improves make-it rate and/or sample efficiency over alternative pretraining or no pretraining.
 
 ---
 
 ## Done vs not done
 
-**Done.** BC/imitation then RL; formal methods (reachability, CBF, MPPI) as runtime filters; HJ at runtime (certification, shields); MARL SOTA (CTDE, QMIX/MAPPO/MADDPG, value factorization, credit assignment); waypoint/sequence policies (Decision Transformer, Diffusion Policy); affordance as representation (RT-Affordance, NavA³); learned constraint = BRT (arXiv 2025).
+Done. BC/imitation then RL; formal methods (reachability, CBF, MPPI) as runtime filters; HJ at runtime (certification, shields); MARL SOTA (CTDE, QMIX/MAPPO/MADDPG, value factorization, credit assignment); waypoint/sequence policies (Decision Transformer, Diffusion Policy); affordance as representation (RT-Affordance, NavA³); learned constraint = BRT (arXiv 2025).
 
-**Not done.** HJ outputs as **training data** for MARL (not shield); affordance heads supervised by HJ; full pipeline (HJ waypoints + affordance labels → pretrain → RL) in 3D multi-agent; feasibility / "make it" as objective (not safety guarantees).
+Not done. HJ outputs as training data for MARL (not shield); affordance heads supervised by HJ; full pipeline (HJ waypoints + affordance labels → pretrain → RL) in 3D multi-agent; feasibility / "make it" as objective (not safety guarantees).
 
 
 ---
