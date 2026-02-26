@@ -2,7 +2,9 @@
 
 ## What
 
-We care whether the agent can make it, not guaranteed safety. HJ reachability is usually used as a runtime shield; we use its outputs as **training targets** so the policy learns "is this gap closable?" from partial observations. No explicit planner; planning is implicit. Goal: higher success probability and better risk-taking. Risks: reward shaping may suffice; HJ does not scale beyond pairwise; RL fine-tune may overwrite pretrained structure.
+**MARL SOTA: where it works and where it fails.** SOTA does well: CTDE (train centralized, run decentralized); value factorization (QMIX, QPLEX) and simple PPO/MAPPO on cooperative games (SMAC, Football, Hanabi); continuous control (MADDPG); credit assignment (COMA) and coordination (DICG) in fixed settings. It *fails* or struggles: **sample inefficiency**—lots of env steps to reach good performance; **partial observability**—no built-in notion of belief or “can I make it?”; **non-stationarity** and **credit assignment in open systems** (changing agents/tasks); **safety-critical “make it”**—policies are reactive, no explicit feasibility reasoning; **overgeneralization** in value factorization (monotonicity limits). So we get strong game-players but not yet agents that reliably “make it” in cluttered, dynamic 3D with tight gaps.
+
+**Our angle.** We care whether the agent can make it, not guaranteed safety. HJ reachability is usually used as a runtime shield; we use its outputs as **training targets** so the policy learns "is this gap closable?" from partial observations. No explicit planner; planning is implicit. Goal: higher success probability and better risk-taking. Risks: reward shaping may suffice; HJ does not scale beyond pairwise; RL fine-tune may overwrite pretrained structure.
 
 ---
 
@@ -21,7 +23,7 @@ We care whether the agent can make it, not guaranteed safety. HJ reachability is
 
 ---
 
-## Closest ideas (cited)
+## Closest ideas?
 
 - **HJ + learning:** Usually certification or online use (Certifying HJ via RL, NeHMO, HJRNO) or shields (Shielded RL). We use HJ offline to label data.
 - **Learned constraint = BRT** ("Your learned constraint is secretly a backward reachable tube"): they learn BRTs from data; we supply BRT-consistent labels.
