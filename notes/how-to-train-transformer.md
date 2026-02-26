@@ -130,7 +130,7 @@ The pipeline is four stages. **Pretrain:** input = FOV + tokenized observable an
 > - **2. DAgger:** Imitation is biased toward “teacher states.” When the policy visits different states, it can fail. DAgger: run the current policy, relabel those states with the teacher, add to the dataset, pretrain again. Fixes distribution shift.
 > - **3. RL:** Fine-tune with the real objective (reward) and the real controller in the loop. Pretraining gives a good init; RL adapts to the true task and compensates for teacher suboptimality.
 
-Details: [[_summary]]; data and HJ labels: [[hj-training-data]].
+Details: _summary.md; data and HJ labels: hj-training-data.md.
 
 ---
 
@@ -150,7 +150,7 @@ Share controller type and $K$ to choose $L$, $H$, and model size for onboard lat
 
 ## 8. Data (minimal)
 
-Paired windows: $\mathcal{D} = \{(o_{t-L+1:t}, W^*_t, \ldots)\}$. $o$ = in-scene / FOV only; $W^*$ = teacher waypoints (observable answers) at same rate as controller. Pipeline: spawn → rollout with teacher + $\mathcal{C}$ → log → slice windows → augment $o$ (noise, dropout). See [[hj-training-data]] for HJ/labels.
+Paired windows: $\mathcal{D} = \{(o_{t-L+1:t}, W^*_t, \ldots)\}$. $o$ = in-scene / FOV only; $W^*$ = teacher waypoints (observable answers) at same rate as controller. Pipeline: spawn → rollout with teacher + $\mathcal{C}$ → log → slice windows → augment $o$ (noise, dropout). See hj-training-data.md for HJ/labels.
 
 ---
 

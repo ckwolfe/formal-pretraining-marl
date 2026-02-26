@@ -37,7 +37,7 @@ HJ outputs (safe-set value, time-to-boundary, safe direction) → **labels**, no
 
 ## 5. Data and training
 
-**Dataset:** $(o_{t-L+1:t}, x^*_{...}, W^*_t, y_t)$. $W^*$ = teacher (HJ-conditioned); $y$ = affordance labels. See [[fm-planning/formal-pretraining-marl/notes/training-data|training-data.md]] for HJ formulation and pipeline.
+**Dataset:** $(o_{t-L+1:t}, x^*_{...}, W^*_t, y_t)$. $W^*$ = teacher (HJ-conditioned); $y$ = affordance labels. See hj-training-data.md for HJ formulation and pipeline.
 
 **Phases:** 0) Teacher + controller-in-loop; 1) Belief + waypoint imitation + affordance ($\mathcal{L}_{belief} + \lambda_{wp}\mathcal{L}_{wp} + \lambda_{aff}\mathcal{L}_{aff}$); 2) Dataset aggregation; 3) RL fine-tune.
 

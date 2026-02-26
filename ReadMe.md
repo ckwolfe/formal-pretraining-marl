@@ -2,11 +2,10 @@
 
 This repo is an **Obsidian vault**: research notes, lit review, and drafts for the HJ-reachability pretraining / affordance-aware MARL project. Papers, notes, and ideas are welcome.
 
-## Stage One Sim 
-sandbox https://github.com/airobotics-ucberkeley/sandbox
+## Sim stages
 
-## Stage Two Sim 
-Isaac https://github.com/airobotics-ucberkeley/isaac_drone_racer_public
+- **Stage 1 (sandbox):** [airobotics-ucberkeley/sandbox](https://github.com/airobotics-ucberkeley/sandbox)
+- **Stage 2 (Isaac):** [airobotics-ucberkeley/isaac_drone_racer_public](https://github.com/airobotics-ucberkeley/isaac_drone_racer_public)
 
 ## Open in Obsidian
 
@@ -18,7 +17,7 @@ Isaac https://github.com/airobotics-ucberkeley/isaac_drone_racer_public
    ```
 3. **Open as vault** — In Obsidian: *Open folder as vault* (or *Open another vault* → *Open folder*) and choose the `formal-pretraining-marl` folder. Your notes, links, and graph will load.
 
-From there you can edit `.md` files, use `[[wikilinks]]`, and add papers under `papers/` or notes under `notes/`.
+From there you can edit `.md` files, use wikilinks, and add papers under `papers/` or notes under `notes/`.
 
 ## Contributing
 
