@@ -1,0 +1,4 @@
+# formal-pretraining-marl — local rules
+
+- **Exempt from repo-level rules:** Do not enforce the vault’s high-level rules here (e.g. glossary/index/lit_review/summary structure, deadlines, audit). This folder is self-contained.
+- **No redundant files:** Do not create duplicate or overlapping content. Prefer editing existing files; add new files only when they serve a distinct purpose.
