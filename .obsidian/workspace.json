@@ -1,0 +1,234 @@
+{
+  "main": {
+    "id": "80342b92bfad45ce",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea0c3606a2d9c1ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d05578f806dff298",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "formal-pretraining-marl/notes/how-to-train-transformer.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "how-to-train-transformer"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b9537236ecaed176",
+    "type": "split",
+    "children": [
+      {
+        "id": "ddf0722ccc083bfe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9ba37bdc4ba4754c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "95349a046970871f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5549c934c2eb19b7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0e2858f75060c6e6",
+    "type": "split",
+    "children": [
+      {
+        "id": "e39c9a431d84f0a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5588d49ee7a3bdce",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "glossary.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for glossary"
+            }
+          },
+          {
+            "id": "cc8cbc5d169bd75d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "glossary.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from glossary"
+            }
+          },
+          {
+            "id": "a623449777756044",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2c64a1ad882c1f43",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "5a9cf2a2eac2da0d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "glossary.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of glossary"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "d05578f806dff298",
+  "lastOpenFiles": [
+    "formal-pretraining-marl/notes/hj-training-data.md",
+    "formal-pretraining-marl/drafts/v2_HJ-Reachability Pretraining for Affordance-Aware MARL.md",
+    "formal-pretraining-marl/drafts/v1_Implicit_affordance_aware_planning_via_structured_pretraining_priors.pdf",
+    "formal-pretraining-marl/papers/lit_review.md",
+    "formal-pretraining-marl/notes/how-to-train-transformer.md",
+    "formal-pretraining-marl/notes/index.md",
+    "formal-pretraining-marl/index.md",
+    "formal-pretraining-marl/notes/open-questions.md",
+    "formal-pretraining-marl/ReadMe.md",
+    "formal-pretraining-marl/notes/_summary.md",
+    "formal-pretraining-marl/papers/index.md",
+    "fm-planning/formal-pretraining-marl/index.md",
+    "formal-pretraining-marl/papers",
+    "formal-pretraining-marl/notes",
+    "formal-pretraining-marl/drafts",
+    "formal-pretraining-marl",
+    "fm-planning/formal-pretraining-marl/summary.md",
+    "fm-planning/formal-pretraining-marl/papers/lit_review.md",
+    "fm-planning/formal-pretraining-marl/papers/index.md",
+    "fm-planning/formal-pretraining-marl/notes/training-data.md",
+    "fm-planning/formal-pretraining-marl/notes/open-questions.md",
+    "fm-planning/formal-pretraining-marl/notes/how-to-train-transformer.md",
+    "fm-planning/formal-pretraining-marl/drafts/Implicit_affordance_aware_planning_via_structured_pretraining_priors.pdf",
+    "fm-planning/formal-pretraining-marl/drafts/index.md",
+    "fm-planning/formal-pretraining-marl/notes.md",
+    "fm-planning/formal-pretraining-marl/notes/summary.md",
+    "fm-planning/formal-pretraining-marl/notes/notes.md",
+    "fm-planning/formal-pretraining-marl/notes/index.md",
+    "fm-planning/index.md",
+    "evolution/clawdbot-evolution/notes/summary.md",
+    "_glossary.md",
+    "racing/real-car-demo/drafts",
+    "racing/real-car-demo/notes",
+    "racing/real-car-demo/papers",
+    "racing/learning-to-race/notes/johannes-bentz.txt",
+    "scripts/assets/idea-assets/Pasted image 20260210182359.png",
+    "scripts/assets/idea-assets/Pasted image 20260210182332.png",
+    "ml-theory/rlvr/notes/meeting/Screenshot 2025-12-12 at 2.41.20 PM.png",
+    "ml-theory/rlvr/notes/meeting/Screenshot 2025-12-11 at 9.33.46 AM.png",
+    "ml-theory/rlvr/notes/meeting/Screenshot 2025-12-11 at 8.55.28 AM.png",
+    "ml-theory/rlvr/notes/meeting/Screenshot 2025-12-11 at 11.10.49 AM.png",
+    "ml-theory/rlvr/notes/meeting/Screenshot 2025-12-11 at 11.24.26 AM.png",
+    "ml-theory/rlvr/notes/meeting/Screenshot 2025-12-11 at 10.27.05 AM.png",
+    "ml-theory/rlvr/notes/class/Screenshot 2025-11-26 at 10.29.10 AM.png",
+    "ml-theory/rlvr/notes/class/Screenshot 2025-11-25 at 6.28.02 PM.png"
+  ]
+}

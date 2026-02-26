@@ -1,0 +1,28 @@
+/* wider-margins — content width follows window with a fixed side offset */
+
+:root {
+  --content-margin-offset: 80px;
+  /* Override Obsidian's readable line length so it uses viewport-based width */
+  --file-line-width: min(1400px, calc(100vw - var(--content-margin-offset)));
+}
+
+/* Reading view: the sizer is what Obsidian actually constrains */
+.markdown-preview-view .markdown-preview-sizer {
+  max-width: min(1400px, calc(100vw - var(--content-margin-offset)));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Editor (CM6): sizer / content container */
+.markdown-source-view.mod-cm6 .cm-sizer,
+.markdown-source-view.mod-cm6 .cm-contentContainer {
+  max-width: min(1400px, calc(100vw - var(--content-margin-offset)));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Legacy / fallback: if theme targets the outer view */
+.markdown-preview-view,
+.markdown-source-view .cm-s-obsidian {
+  max-width: none;
+}
